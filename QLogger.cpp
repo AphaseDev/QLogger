@@ -343,7 +343,7 @@ void QLoggerManager::_enqueueMessage(const QString& module, LogLevel level, cons
       {
          const auto fileName = file.mid(file.lastIndexOf(QLatin1Char('/')) + 1);
 
-         if (mDefaultMode != LogMode::OnlyFile)
+         if (mDefaultMode != LogMode::OnlyFile && mDefaultMode != LogMode::Disabled)
          {
             qWarning().noquote().nospace() << "No module for message [" << module << "][" << message << "]";
          }
